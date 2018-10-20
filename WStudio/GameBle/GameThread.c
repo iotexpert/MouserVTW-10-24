@@ -2,7 +2,7 @@
 #include "../Game/GameThread.h"
 
 #include "../Game/cy_tft_display.h"
-#include "SystemGlobal.h"
+#include "../Game/SystemGlobal.h"
 #include "ugui.h"
 
 /******************************************************

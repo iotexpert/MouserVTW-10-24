@@ -1,4 +1,5 @@
-#include "GameThread.h"
+#include "../WStudio/GameBle/GameThread.h"
+#include "../WStudio/GameBle/GoBleThread.h"
 #include "wiced.h"
 
 /******************************************************
@@ -34,6 +35,7 @@
 wiced_thread_t blinkThreadHandle;
 wiced_thread_t capsenseThreadHandle;
 wiced_thread_t gameThreadHandle;
+
 wiced_queue_t paddleQueue;
 
 /******************************************************
@@ -92,9 +94,9 @@ void application_start( )
 {
     wiced_init( );
     wiced_rtos_init_queue(&paddleQueue,"paddleQueue",sizeof(game_msg_t),10);
-
     wiced_rtos_create_thread(&blinkThreadHandle,7,"Blink Thread",pdlBlinkThread,500,0);
     wiced_rtos_create_thread(&capsenseThreadHandle,7,"CapSense Thread",capsenseThread,1024,0);
     wiced_rtos_create_thread(&gameThreadHandle,7,"game Thread",gameThread,4096,0);
+    GoBleThread_start();
  }
 

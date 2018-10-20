@@ -15,16 +15,16 @@
 * Copyright (2017), Cypress Semiconductor Corporation. All rights reserved.
 *******************************************************************************
 * This software, including source code, documentation and related materials
-* (“Software”), is owned by Cypress Semiconductor Corporation or one of its
-* subsidiaries (“Cypress”) and is protected by and subject to worldwide patent
+* (ï¿½Softwareï¿½), is owned by Cypress Semiconductor Corporation or one of its
+* subsidiaries (ï¿½Cypressï¿½) and is protected by and subject to worldwide patent
 * protection (United States and foreign), United States copyright laws and
 * international treaty provisions. Therefore, you may use this Software only
 * as provided in the license agreement accompanying the software package from
-* which you obtained this Software (“EULA”).
+* which you obtained this Software (ï¿½EULAï¿½).
 *
 * If no EULA applies, Cypress hereby grants you a personal, nonexclusive,
 * non-transferable license to copy, modify, and compile the Software source
-* code solely for use in connection with Cypress’s integrated circuit products.
+* code solely for use in connection with Cypressï¿½s integrated circuit products.
 * Any reproduction, modification, translation, compilation, or representation
 * of this Software except as specified above is prohibited without the express
 * written permission of Cypress.
@@ -37,13 +37,13 @@
 * Software or any product or circuit described in the Software. Cypress does
 * not authorize its products for use in any products where a malfunction or
 * failure of the Cypress product may reasonably be expected to result in
-* significant property damage, injury or death (“High Risk Product”). By
-* including Cypress’s product in a High Risk Product, the manufacturer of such
+* significant property damage, injury or death (ï¿½High Risk Productï¿½). By
+* including Cypressï¿½s product in a High Risk Product, the manufacturer of such
 * system or application assumes all risk of such use and in doing so agrees to
 * indemnify Cypress against all liability.
 * *******************************************************************************/
 
-#include "cy_tft_display.h"
+#include "../Game/cy_tft_display.h"
 
 void Cy_TFT_CTRL_Write(uint8_t data)
 {

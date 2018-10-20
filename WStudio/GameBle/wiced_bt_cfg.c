@@ -12,11 +12,13 @@
 
 #include "wiced_bt_dev.h"
 #include "wiced_bt_ble.h"
+#include "wiced_bt_uuid.h"
 #include "wiced_bt_gatt.h"
+#include "wiced_bt_avrc.h"
 #include "wiced_bt_cfg.h"
 
 /* Null-Terminated Local Device Name */
-uint8_t BT_LOCAL_NAME[] = { 'r','e','m','o','t','e','7','1','9','\0' };
+uint8_t BT_LOCAL_NAME[] = { 'G','o','B','l','e','T','e','s','t','\0' };
 const uint16_t BT_LOCAL_NAME_CAPACITY = sizeof(BT_LOCAL_NAME);
 
 
@@ -151,22 +153,11 @@ const wiced_bt_cfg_settings_t wiced_bt_cfg_settings =
  * Pools must be ordered in increasing buf_size.
  * If a pools runs out of buffers, the next pool will be used.
  ******************************************************************/
-#if 0
-const wiced_bt_cfg_buf_pool_t wiced_bt_cfg_buf_pools[] =
+const wiced_bt_cfg_buf_pool_t wiced_bt_cfg_buf_pools[WICED_BT_CFG_NUM_BUF_POOLS] =
 {
 /*  { buf_size, buf_count, }, */
     { 64,       12,        }, /* Small Buffer Pool */
     { 360,      4,         }, /* Medium Buffer Pool (used for HCI & RFCOMM control messages, min recommended size is 360) */
     { 512,      4,         }, /* Large Buffer Pool  (used for HCI ACL messages) */
     { 1024,     2,         }, /* Extra Large Buffer Pool (used for AVDT media packets and miscellaneous; if not needed, set buf_count to 0) */
-};
-#endif
-
-const wiced_bt_cfg_buf_pool_t wiced_bt_cfg_buf_pools[WICED_BT_CFG_NUM_BUF_POOLS] =
-{
-/*  { buf_size, buf_count } */
-    { 64,       4   },      /* Small Buffer Pool */
-    { 360,      4   },      /* Medium Buffer Pool (used for HCI & RFCOMM control messages, min recommended size is 360) */
-    { 1056,      6  },      /* Large Buffer Pool  (used for HCI ACL messages) */
-    { 1056,      0   },      /* Extra Large Buffer Pool - Used for avdt media packets and miscellaneous (if not needed, set buf_count to 0) */
 };
