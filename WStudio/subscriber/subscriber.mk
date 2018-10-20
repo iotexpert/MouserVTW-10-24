@@ -30,10 +30,42 @@
  # so agrees to indemnify Cypress against all liability.
 #
 
-NAME := App_WStudio_Game
+NAME := App_AWS_subcriber
 
-$(NAME)_SOURCES := main.c \
-	GameThread.c \
-	cy_tft_display.c
+$(NAME)_SOURCES := subscriber.c
 
-$(NAME)_COMPONENTS := graphics/ugui
+$(NAME)_COMPONENTS := protocols/AWS
+
+WIFI_CONFIG_DCT_H := wifi_config_dct.h
+
+$(NAME)_RESOURCES  := apps/aws/iot/rootca.cer \
+                      apps/aws/iot/subscriber/client.cer \
+                      apps/aws/iot/subscriber/privkey.cer
+# To support Low memory platforms, disabling components which are not required
+GLOBAL_DEFINES += WICED_CONFIG_DISABLE_SSL_SERVER \
+                  WICED_CONFIG_DISABLE_DTLS \
+                  WICED_CONFIG_DISABLE_ENTERPRISE_SECURITY \
+                  WICED_CONFIG_DISABLE_DES \
+                  WICED_CONFIG_DISABLE_ADVANCED_SECURITY_CURVES
+
+VALID_OSNS_COMBOS  := ThreadX-NetX_Duo FreeRTOS-LwIP
+VALID_PLATFORMS := BCM943362WCD4 \
+                   BCM943362WCD6 \
+                   BCM943362WCD8 \
+                   BCM943364WCD1 \
+                   CYW94343WWCD1_EVB \
+                   BCM943438WCD1 \
+                   BCM94343WWCD2 \
+                   CY8CKIT_062 \
+                   NEB1DX* \
+                   CYW9MCU7X9N364 \
+                   CYW943907AEVAL1F \
+                   CYW9WCD2REFAD* \
+                   CYW9WCD760PINSDAD2 \
+                   CYW943012EVB* \
+                   CYW943455EVB*
+
+ifeq ($(PLATFORM),$(filter $(PLATFORM), CYW9MCU7X9N364))
+GLOBAL_DEFINES += PLATFORM_HEAP_SIZE=34*1024
+USE_LIBC_PRINTF     := 0
+endif
