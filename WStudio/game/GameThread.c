@@ -1,8 +1,9 @@
 
-#include "game.h"
-#include "cy_tft_display.h"
+#include "../Game/GameThread.h"
+
+#include "../Game/cy_tft_display.h"
+#include "../Game/systemGlobal.h"
 #include "ugui.h"
-#include "systemGlobal.h"
 
 /******************************************************
  *                      Macros

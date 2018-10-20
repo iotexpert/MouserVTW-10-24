@@ -33,7 +33,7 @@
 NAME := App_PSoC6_Game
 
 $(NAME)_SOURCES := main.c \
-	game.c \
+	GameThread.c \
 	cy_tft_display.c
 
 $(NAME)_COMPONENTS := graphics/ugui

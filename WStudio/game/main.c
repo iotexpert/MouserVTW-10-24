@@ -1,5 +1,5 @@
+#include "../Game/GameThread.h"
 #include "wiced.h"
-#include "game.h"
 
 /******************************************************
  *                      Macros
