@@ -1,5 +1,5 @@
 #pragma once
-#include <stdint.h>
+#include "wiced.h"
 
 typedef enum {
     MSG_POSITION,
@@ -12,5 +12,5 @@ typedef struct {
     uint32_t val;
 } game_msg_t;
 
-void gameThread(void *arg);
+void gameThread(wiced_thread_arg_t arg);
 
