@@ -1,7 +1,7 @@
 
-#include "../Game/GameThread.h"
+#include "GameThread.h"
 
-#include "../Game/cy_tft_display.h"
+#include "cy_tft_display.h"
 #include "SystemGlobal.h"
 #include "ugui.h"
 

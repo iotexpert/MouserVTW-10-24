@@ -6,7 +6,7 @@
 
 // GoBle_db.c
 
-#include "../WStudio/GameBle/GoBle_db.h"
+#include "GoBle_db.h"
 
 #include "wiced.h"
 #include "wiced_bt_uuid.h"

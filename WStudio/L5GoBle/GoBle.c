@@ -1,5 +1,5 @@
 
-#include "../L5GoBle/GoBleThread.h"
+#include "GoBleThread.h"
 #include "wiced.h"
 
 

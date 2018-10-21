@@ -1,7 +1,7 @@
 
-#include "../WStudio/GameBle/GameThread.h"
-#include "../WStudio/GameBle/GoBle_db.h"
-#include "../WStudio/GameBle/SystemGlobal.h"
+#include "GameThread.h"
+#include "GoBle_db.h"
+#include "SystemGlobal.h"
 #include "wiced.h"
 #include "wiced_bt_ble.h"
 #include "wiced_bt_gatt.h"
@@ -131,7 +131,7 @@ wiced_bt_gatt_status_t goble_event_handler( wiced_bt_gatt_evt_t event, wiced_bt_
         {
             uint32_t numButtons = p_attr_req->data.write_req.p_val[3];
             uint32_t sliderY = p_attr_req->data.write_req.p_val[5+numButtons];
-            uint32_t sliderX = p_attr_req->data.write_req.p_val[6+numButtons];
+            //uint32_t sliderX = p_attr_req->data.write_req.p_val[6+numButtons];
             uint32_t buttonMask = 0x00;
             for(int i=0;i<numButtons;i++)
             {
@@ -146,7 +146,7 @@ wiced_bt_gatt_status_t goble_event_handler( wiced_bt_gatt_evt_t event, wiced_bt_
             {
                 msg.evt = MSG_BUTTON0;
                 msg.val = 1;
-                wiced_result_t result=wiced_rtos_push_to_queue(&paddleQueue,&msg,0);
+                wiced_rtos_push_to_queue(&paddleQueue,&msg,0);
             }
             status = WICED_BT_GATT_SUCCESS;
         }

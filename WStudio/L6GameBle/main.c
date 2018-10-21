@@ -1,5 +1,5 @@
-#include "../WStudio/GameBle/GameThread.h"
-#include "../WStudio/GameBle/GoBleThread.h"
+#include "GameThread.h"
+#include "GoBleThread.h"
 #include "wiced.h"
 
 /******************************************************

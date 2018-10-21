@@ -172,14 +172,13 @@ static void my_subscriber_aws_callback( wiced_aws_handle_t aws, wiced_aws_event_
             break;
         case WICED_AWS_EVENT_PAYLOAD_RECEIVED:
         {
-            char buff[10];
-            uint32_t val;
+            int32_t val;
             WPRINT_APP_INFO( ("[Application/AWS] Payload Received[ Topic: %.*s ]:\n", (int)data->message.topic_length, data->message.topic ) );
 
             if(strncmp(WICED_TOPIC,(const char *)data->message.topic,strlen(WICED_TOPIC)) == 0 && data->message.data_length < 4)
             {
-                sscanf((const char *)data->message.data,"%d",&val);
-                WPRINT_APP_INFO(("Val = %d\n",val));
+                sscanf((const char *)data->message.data,"%d",(int *)&val);
+                WPRINT_APP_INFO(("Val = %d\n",(int)val));
             }
         }
         break;

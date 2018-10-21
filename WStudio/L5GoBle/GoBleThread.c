@@ -1,5 +1,5 @@
 
-#include "../L5GoBle/GoBle_db.h"
+#include "GoBle_db.h"
 #include "wiced.h"
 #include "wiced_bt_ble.h"
 #include "wiced_bt_gatt.h"
