@@ -1,6 +1,6 @@
 
 
-NAME := App_WStudio_GameBleAws
+NAME := App_WStudio_L8GameBleAws
 
 $(NAME)_SOURCES := main.c \
 	GameThread.c \

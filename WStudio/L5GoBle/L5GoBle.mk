@@ -1,5 +1,5 @@
 
-NAME := WStudio_GoBle
+NAME := App_WStudio_L5GoBle
 
 $(NAME)_SOURCES    := GoBle.c \
 			          GoBleThread.c \

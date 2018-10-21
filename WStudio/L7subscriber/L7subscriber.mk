@@ -30,7 +30,7 @@
  # so agrees to indemnify Cypress against all liability.
 #
 
-NAME := App_AWS_subcriber
+NAME := App_WStudio_L7subcriber
 
 $(NAME)_SOURCES := subscriber.c
 

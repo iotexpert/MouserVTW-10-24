@@ -30,7 +30,7 @@
  # so agrees to indemnify Cypress against all liability.
 #
 
-NAME := App_WStudio_Game
+NAME := App_WStudio_L4Game
 
 $(NAME)_SOURCES := main.c \
 	GameThread.c \

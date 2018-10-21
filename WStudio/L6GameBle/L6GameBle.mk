@@ -1,6 +1,6 @@
 
 
-NAME := App_WStudio_GameBle
+NAME := App_WStudio_L6GameBle
 
 $(NAME)_SOURCES := main.c \
 	GameThread.c \

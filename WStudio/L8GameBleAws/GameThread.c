@@ -2,7 +2,7 @@
 #include "../Game/GameThread.h"
 
 #include "../Game/cy_tft_display.h"
-#include "../Game/SystemGlobal.h"
+#include "SystemGlobal.h"
 #include "ugui.h"
 
 /******************************************************
@@ -84,6 +84,7 @@ static uint32_t ballx,bally;
 static int32_t ballXdir, ballYdir;
 static uint32_t ballSpeed;
 
+
 /******************************************************
  *               Functions
  ******************************************************/
@@ -93,6 +94,8 @@ static void UG_PutStringCenter(uint32_t x, uint32_t y, uint32_t fontx, uint32_t 
 {
     y = y - fonty/2;
     x = x - (strlen(string)/2)*fontx;
+    if(strlen(string)%2)
+        x = x - fontx/2;
     UG_PutString(x,y,string);
 }
 
@@ -272,7 +275,11 @@ static void displaySplashScreen()
 {
     gameState = GS_SPLASH;
     UG_FontSelect( &FONT_22X36 );
-    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/2,22,36,"PSoC 6");
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5,22,36,"Cypress");
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*2,22,36,"Mouser");
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*3,22,36,"PSoC 6");
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*4,22,36,"WICED 4343");
+
     wiced_rtos_delay_milliseconds(2000);
 }
 
