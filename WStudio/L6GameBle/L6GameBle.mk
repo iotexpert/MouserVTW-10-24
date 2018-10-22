@@ -3,6 +3,7 @@
 NAME := App_WStudio_L6GameBle
 
 $(NAME)_SOURCES := main.c \
+    CapSenseThread.c \
 	GameThread.c \
 	cy_tft_display.c \
 	GoBleThread.c \

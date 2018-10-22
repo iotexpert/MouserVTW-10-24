@@ -1,7 +1,7 @@
 
-#include "../WStudio/L8GameBleAws/GameThread.h"
-#include "../WStudio/L8GameBleAws/GoBle_db.h"
-#include "../WStudio/L8GameBleAws/SystemGlobal.h"
+#include "GameThread.h"
+#include "GoBle_db.h"
+#include "SystemGlobal.h"
 #include "wiced.h"
 #include "wiced_bt_ble.h"
 #include "wiced_bt_gatt.h"

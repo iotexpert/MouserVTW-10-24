@@ -1,8 +1,8 @@
 
-#include "../WStudio/L8GameBleAws/GameThread.h"
+#include "GameThread.h"
 
-#include "../WStudio/L8GameBleAws/cy_tft_display.h"
-#include "../WStudio/L8GameBleAws/SystemGlobal.h"
+#include "cy_tft_display.h"
+#include "SystemGlobal.h"
 #include "ugui.h"
 
 /******************************************************

@@ -43,7 +43,7 @@
 * indemnify Cypress against all liability.
 * *******************************************************************************/
 
-#include "../WStudio/L8GameBleAws/cy_tft_display.h"
+#include "cy_tft_display.h"
 
 void Cy_TFT_CTRL_Write(uint8_t data)
 {

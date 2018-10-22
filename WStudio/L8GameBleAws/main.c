@@ -1,6 +1,6 @@
-#include "../WStudio/L8GameBleAws/GameThread.h"
-#include "../WStudio/L8GameBleAws/GoBleThread.h"
-#include "../WStudio/L8GameBleAws/subscriber.h"
+#include "GameThread.h"
+#include "GoBleThread.h"
+#include "subscriber.h"
 #include "wiced.h"
 
 /******************************************************
