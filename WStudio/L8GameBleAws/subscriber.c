@@ -79,14 +79,14 @@
  *
  */
 
+#include "../WStudio/L8GameBleAws/GameThread.h"
+#include "../WStudio/L8GameBleAws/SystemGlobal.h"
 #include "wiced.h"
 #include "wiced_aws.h"
 #include "aws_common.h"
 
 #include "resources.h"
 
-#include "SystemGlobal.h"
-#include "GameThread.h"
 
 /******************************************************
  *                      Macros
