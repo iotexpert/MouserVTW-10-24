@@ -1,6 +1,7 @@
 #include "GameThread.h"
 #include "wiced.h"
 #include "CapSenseThread.h"
+#include "SystemGlobal.h"
 
 /******************************************************
  *                      Macros

@@ -19,12 +19,6 @@ static void UG_PutStringCenter(uint32_t x, uint32_t y, uint32_t fontx, uint32_t 
     UG_PutString(x,y,string);
 }
 
-// This function displays the start button message
-static void displayStartButton()
-{
-    UG_FontSelect(&FONT_12X20);
-    UG_PutStringCenter(SCREEN_X/2 , SCREEN_Y - 30 ,12,22,  "Press B0 To Start");
-}
 
 // Display the splash screen
 static void displaySplashScreen()
@@ -36,6 +30,13 @@ static void displaySplashScreen()
     UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*4,22,36,"WICED 4343");
 
     wiced_rtos_delay_milliseconds(2000);
+}
+
+// This function displays the start button message
+static void displayStartButton()
+{
+    UG_FontSelect(&FONT_12X20);
+    UG_PutStringCenter(SCREEN_X/2 , SCREEN_Y - 30 ,12,22,  "Press B0 To Start");
 }
 
 

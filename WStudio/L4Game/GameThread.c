@@ -1,6 +1,5 @@
 
 #include "GameThread.h"
-
 #include "cy_tft_display.h"
 #include "SystemGlobal.h"
 #include "ugui.h"
@@ -54,7 +53,9 @@ typedef enum {
  *               Static Function Declarations
  ******************************************************/
 static void UG_PutStringCenter(uint32_t x, uint32_t y, uint32_t fontx, uint32_t fonty,char *string);
+static void displaySplashScreen();
 static void displayStartButton();
+static void  displayStartScreen();
 static void displayScore();
 static void displaySpeed();
 static void endGame();
@@ -63,8 +64,6 @@ static inline uint32_t calcPaddleBottom();
 static void updatePaddle(paddle_update_t type);
 static void updateBall();
 static void updateScreen(void *arg);
-static void displaySplashScreen();
-static void  displayStartScreen();
 
 /******************************************************
  *               Variable Definitions
@@ -99,12 +98,38 @@ static void UG_PutStringCenter(uint32_t x, uint32_t y, uint32_t fontx, uint32_t 
     UG_PutString(x,y,string);
 }
 
+
+// Display the splash screen
+static void displaySplashScreen()
+{
+    gameState = GS_SPLASH;
+    UG_FontSelect( &FONT_22X36 );
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5,22,36,"Cypress");
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*2,22,36,"Mouser");
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*3,22,36,"PSoC 6");
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*4,22,36,"WICED 4343");
+
+    wiced_rtos_delay_milliseconds(2000);
+}
+
 // This function displays the start button message
 static void displayStartButton()
 {
     UG_FontSelect(&FONT_12X20);
     UG_PutStringCenter(SCREEN_X/2 , SCREEN_Y - 30 ,12,22,  "Press B0 To Start");
 }
+
+// Display the Start Screen
+static void  displayStartScreen()
+{
+    gameState = GS_START;
+    UG_FillScreen( C_BLACK );
+    UG_FontSelect( &FONT_22X36 );
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/2 -2 - 18 ,22,36,"Ready");
+    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/2 + 2 + 18 ,22,36,"Player 1");
+    displayStartButton();
+}
+
 
 // This function displays the score
 static void displayScore()
@@ -270,30 +295,6 @@ static void updateScreen(void *arg)
     updateBall();
 }
 
-// Display the splash screen
-static void displaySplashScreen()
-{
-    gameState = GS_SPLASH;
-    UG_FontSelect( &FONT_22X36 );
-    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5,22,36,"Cypress");
-    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*2,22,36,"Mouser");
-    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*3,22,36,"PSoC 6");
-    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/5*4,22,36,"WICED 4343");
-
-    wiced_rtos_delay_milliseconds(2000);
-}
-
-
-// Display the Start Screen
-static void  displayStartScreen()
-{
-    gameState = GS_START;
-    UG_FillScreen( C_BLACK );
-    UG_FontSelect( &FONT_22X36 );
-    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/2 -2 - 18 ,22,36,"Ready");
-    UG_PutStringCenter(SCREEN_X/2,SCREEN_Y/2 + 2 + 18 ,22,36,"Player 1");
-    displayStartButton();
-}
 
 // Main game thread
 void gameThread(wiced_thread_arg_t arg)
